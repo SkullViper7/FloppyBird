@@ -198,6 +198,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.3362
       objectReference: {fileID: 0}
+    - target: {fileID: 4034056911503358152, guid: c389feec29636124ea57aca280bd44e1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4626181514882522640, guid: c389feec29636124ea57aca280bd44e1,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -267,6 +272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882795703628076458, guid: c389feec29636124ea57aca280bd44e1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -361,6 +371,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.7167
       objectReference: {fileID: 0}
+    - target: {fileID: 4034056911503358152, guid: c389feec29636124ea57aca280bd44e1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4626181514882522640, guid: c389feec29636124ea57aca280bd44e1,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -430,6 +445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pipe (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6882795703628076458, guid: c389feec29636124ea57aca280bd44e1,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

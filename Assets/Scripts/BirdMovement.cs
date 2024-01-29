@@ -23,6 +23,7 @@ public class BirdMovement : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
         {
+            rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
     }
