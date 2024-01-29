@@ -7,5 +7,6 @@ public class Death : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Time.timeScale = 0;
+        UIManager.Instance.ShowScore();
     }
 }

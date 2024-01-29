@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     GameObject _endScreen;
+    [SerializeField]
+    GameObject _gameScore;
+
+    [SerializeField]
+    TMP_Text _endScoreText;
+    [SerializeField]
+    TMP_Text _bestScoreText;
 
     private void Awake()
     {
@@ -35,5 +43,19 @@ public class UIManager : MonoBehaviour
     {
         _score += 1;
         _scoreText.text = _score.ToString();
+    }
+
+    public void ShowScore()
+    {
+        _gameScore.SetActive(false);
+        _endScreen.SetActive(true);
+
+        _endScoreText.text = _score.ToString();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1.0f;
     }
 }

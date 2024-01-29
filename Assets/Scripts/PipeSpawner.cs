@@ -25,11 +25,14 @@ public class PipeSpawner : MonoBehaviour
     {
         for (int i = 0; i < _pipes.Count; i++)
         {
+            int yOffset = Random.Range(-5, 5);
+            Vector3 offset = new Vector3(0, yOffset, 0);
+
             _pipes[i].SetActive(true);
-            _pipes[i].transform.position = _spawnPoint.position;
+            _pipes[i].transform.position = _spawnPoint.position + offset;
             StartCoroutine(_movementScript.Move(_pipes[i]));
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
         }
 
         StartCoroutine(Spawn());
