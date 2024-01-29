@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     TMP_Text _scoreText;
 
     int _score;
+    int _bestScore;
 
     [SerializeField]
     GameObject _endScreen;
@@ -51,6 +52,17 @@ public class UIManager : MonoBehaviour
         _endScreen.SetActive(true);
 
         _endScoreText.text = _score.ToString();
+
+        if (PlayerPrefs.HasKey("BestScore"))
+        {
+            _bestScoreText.text = PlayerPrefs.GetInt("BestScore").ToString();
+        }
+
+        if (_score > _bestScore)
+        {
+            _bestScore = _score;
+            PlayerPrefs.SetInt("BestScore", _bestScore);
+        }
     }
 
     public void Restart()
