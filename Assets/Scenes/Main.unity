@@ -604,12 +604,12 @@ PrefabInstance:
     - target: {fileID: 2414721553637799742, guid: c7246607bea091142a6b97a90ef8cb4f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 2414721553637799742, guid: c7246607bea091142a6b97a90ef8cb4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.579628
+      value: 35.4
       objectReference: {fileID: 0}
     - target: {fileID: 2414721553637799742, guid: c7246607bea091142a6b97a90ef8cb4f,
         type: 3}
@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383ce3e7c07c141438cbb7bec3e3bc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 60
+  _jumpForce: 30
 --- !u!54 &700953280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -867,6 +867,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770445051}
+  - component: {fileID: 770445052}
+  - component: {fileID: 770445053}
   m_Layer: 0
   m_Name: DestroyPoint
   m_TagString: Untagged
@@ -883,12 +885,46 @@ Transform:
   m_GameObject: {fileID: 770445050}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.547874, y: -3.961923, z: 16.417454}
+  m_LocalPosition: {x: -40.547874, y: 2.8, z: 16.417454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 139043645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &770445052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770445050}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 27.520365, z: 1}
+  m_Center: {x: 0, y: -8.709121, z: 0}
+--- !u!114 &770445053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770445050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5ba02ba229fb248b1ce5d80fdd0ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnScript: {fileID: 1489591239}
 --- !u!1001 &819989656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1306,7 +1342,7 @@ Transform:
   m_GameObject: {fileID: 1413354249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.952126, y: -3.961923, z: 16.417454}
+  m_LocalPosition: {x: 37.952126, y: 2.8, z: 16.417454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1322,8 +1358,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1489591240}
   - component: {fileID: 1489591239}
+  - component: {fileID: 1489591241}
   m_Layer: 0
-  m_Name: PipeSpawner
+  m_Name: PipeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1354,6 +1391,7 @@ MonoBehaviour:
   - {fileID: 433217801}
   _spawnPoint: {fileID: 1413354250}
   _destroyPoint: {fileID: 770445051}
+  _movementScript: {fileID: 1489591241}
 --- !u!4 &1489591240
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,6 +1407,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489591241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489591238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238b07a986ffe7c4e8f39c7ca274d21a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
 --- !u!1001 &1716781446
 PrefabInstance:
   m_ObjectHideFlags: 0

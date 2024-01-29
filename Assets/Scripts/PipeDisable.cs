@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death : MonoBehaviour
+public class PipeDisable : MonoBehaviour
 {
+    [SerializeField]
+    PipeSpawner _spawnScript;
+
     private void OnCollisionEnter(Collision collision)
     {
-        Time.timeScale = 0;
+        collision.gameObject.SetActive(false);
     }
 }
