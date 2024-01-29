@@ -10,11 +10,9 @@ public class PipeSpawner : MonoBehaviour
 
     [SerializeField]
     Transform _spawnPoint;
-    [SerializeField]
-    Transform _destroyPoint;
 
     [SerializeField]
-    PipeMovement _movementScript;
+    ObjectMovement _movementScript;
 
     private void Start()
     {
