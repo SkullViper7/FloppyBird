@@ -15,18 +15,19 @@ public class BuildingSpawner : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(_movementScript.Move(_buildings[0]));
         StartCoroutine(Spawn());
     }
 
     public IEnumerator Spawn()
     {
-        for (int i = 0; i < _buildings.Count; i++)
+        for (int i = 1; i < _buildings.Count; i++)
         {
             _buildings[i].SetActive(true);
             _buildings[i].transform.position = _spawnPoint.position;
             StartCoroutine(_movementScript.Move(_buildings[i]));
 
-            yield return new WaitForSeconds(9.6f);
+            yield return new WaitForSeconds(28.5f);
         }
 
         StartCoroutine(Spawn());
