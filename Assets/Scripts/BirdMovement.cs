@@ -11,7 +11,12 @@ public class BirdMovement : MonoBehaviour
     [SerializeField]
     float _rotationSpeed;
 
+    [SerializeField]
+    PipeSpawner _spawnerScript;
+
     Rigidbody rb;
+
+    bool _hasGameStarted;
 
     private void Start()
     {
@@ -25,6 +30,12 @@ public class BirdMovement : MonoBehaviour
 
     public void OnJump()
     {
+        if (!_hasGameStarted)
+        {
+            StartCoroutine(_spawnerScript.Spawn());
+            _hasGameStarted = true;
+        }
+
         rb.useGravity = true;
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);

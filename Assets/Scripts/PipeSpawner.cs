@@ -14,11 +14,6 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField]
     ObjectMovement _movementScript;
 
-    private void Start()
-    {
-        StartCoroutine(Spawn());
-    }
-
     public IEnumerator Spawn()
     {
         for (int i = 0; i < _pipes.Count; i++)
