@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BirdMovement : MonoBehaviour
 {
@@ -14,17 +15,9 @@ public class BirdMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    public void OnJump()
     {
-        Jump();
-    }
-
-    void Jump()
-    {
-        if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetKeyUp(KeyCode.Space))
-        {
-            rb.velocity = Vector3.zero;
-            rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-        }
+        rb.velocity = Vector3.zero;
+        rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
 }
