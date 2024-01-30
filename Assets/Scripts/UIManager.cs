@@ -63,12 +63,14 @@ public class UIManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("BestScore"))
         {
+            _bestScore = PlayerPrefs.GetInt("BestScore");
             _bestScoreText.text = PlayerPrefs.GetInt("BestScore").ToString();
         }
 
         if (_score > _bestScore)
         {
             _bestScore = _score;
+            _bestScoreText.text = _score.ToString();
             PlayerPrefs.SetInt("BestScore", _bestScore);
         }
     }
