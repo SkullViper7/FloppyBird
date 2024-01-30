@@ -15,10 +15,14 @@ public class BuildingSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(_movementScript.Move(_buildings[0]));
+        StartCoroutine(_movementScript.Move(_buildings[0])); // The first buildings are already spawned so they need to move first.
         StartCoroutine(Spawn());
     }
 
+    /// <summary>
+    /// Coroutine to spawn buildings and calling the Move() method, i starts from 1 because the first buildings are already spawned.
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator Spawn()
     {
         for (int i = 1; i < _buildings.Count; i++)
@@ -30,6 +34,6 @@ public class BuildingSpawner : MonoBehaviour
             yield return new WaitForSeconds(28.5f);
         }
 
-        StartCoroutine(Spawn());
+        StartCoroutine(Spawn()); // Restarting the coroutine to make it run forever.
     }
 }

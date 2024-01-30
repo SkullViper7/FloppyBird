@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
@@ -14,6 +13,10 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField]
     ObjectMovement _movementScript;
 
+    /// <summary>
+    /// Spawning pipes with an offset on random heights on a certain frequency.
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator Spawn()
     {
         for (int i = 0; i < _pipes.Count; i++)
@@ -23,11 +26,11 @@ public class PipeSpawner : MonoBehaviour
 
             _pipes[i].SetActive(true);
             _pipes[i].transform.position = _spawnPoint.position + offset;
-            StartCoroutine(_movementScript.Move(_pipes[i]));
+            StartCoroutine(_movementScript.Move(_pipes[i])); // Calling the move method to apply movement to the pipes when they spawn.
 
             yield return new WaitForSeconds(1.5f);
         }
 
-        StartCoroutine(Spawn());
+        StartCoroutine(Spawn()); // Restart the coroutine until the game is over.
     }
 }
